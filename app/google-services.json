@@ -1,41 +1,42 @@
 {
   "project_info": {
-    "project_number": "280343949160",
-    "project_id": "vehicle-management-syste-a5d67",
-    "storage_bucket": "vehicle-management-syste-a5d67.appspot.com"
+    "project_number": "973992908399",
+    "firebase_url": "https://vehicle-management-syste-fb82f-default-rtdb.firebaseio.com",
+    "project_id": "vehicle-management-syste-fb82f",
+    "storage_bucket": "vehicle-management-syste-fb82f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:280343949160:android:5d8e6e1b3058f3101430dd",
+        "mobilesdk_app_id": "1:973992908399:android:942e861156b5e857f2df9a",
         "android_client_info": {
-          "package_name": "com.example.vehicle_managementsystem"
+          "package_name": "com.example.vehiclemanagementsystem"
         }
       },
       "oauth_client": [
         {
-          "client_id": "280343949160-uc0bndi33hnfi5q0qf1bf6ou3egbhmdf.apps.googleusercontent.com",
+          "client_id": "973992908399-fhau616i5003duv6majvtvitemqp259h.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.vehicle_managementsystem",
+            "package_name": "com.example.vehiclemanagementsystem",
             "certificate_hash": "981d3249c8857683d5d629e8db11c889dac90214"
           }
         },
         {
-          "client_id": "280343949160-rlsb824ui421cjt3ljimo071gprugskp.apps.googleusercontent.com",
+          "client_id": "973992908399-bvb04aaorurigj5f1lo82jfbijli96us.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDHrKIUcXFYVNsl1oc4e1XAxjucCfix9nA"
+          "current_key": "AIzaSyCgMvGvIKfeJFOPDJ2sdOTacA4UlNXxIxU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "280343949160-rlsb824ui421cjt3ljimo071gprugskp.apps.googleusercontent.com",
+              "client_id": "973992908399-bvb04aaorurigj5f1lo82jfbijli96us.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

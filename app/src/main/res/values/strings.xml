@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">Vehicle Management System</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">LOGIN</string>
+    <string name="Email_id">Input your Email</string>
+    <string name="driver_ID">Enter Driver ID</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="register">Register New Account</string>
+    <string name="Fname">Input your first Name</string>
+    <string name="Lname">Input your Last Name</string>
+    <string name="Phone_No">Phone Number</string>
+    <string name="Password">Confirm Password</string>
+    <string name="welcome">"KARIBU!  Drive Bila Stress :) "</string>
+    <string name="or">OR</string>
+    <string name="Google">Google</string>
+    <string name="Karibu">KARIBU!! Drive Bila Stress :)</string>
+    <string name="photo">Photo</string>
+    <string name="images">image</string>
+    <string name="VehicleManagementSystem">Vehicle Management System</string>
+    <string name="Register">REGISTER</string>
+    <string name="loginnow">Already Have an Account</string>
+    <string name="registration">REGISTER</string>
+    <string name="Reset_password">Reset Password</string>
+    <string name="PasswordReset">Password Reset</string>
+    <string name="Send">SEND</string>
 </resources>
