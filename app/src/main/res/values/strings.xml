@@ -25,4 +25,19 @@
     <string name="Reset_password">Reset Password</string>
     <string name="PasswordReset">Password Reset</string>
     <string name="Send">SEND</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="maintenance">Maintenance</string>
+    <string name="Fuel">Fuel</string>
+    <string name="LogOut">Logout</string>
+    <string name="Location">Location</string>
+    <string name="Maintenance">Maintenance</string>
+    <string name="number_plate">Input Vehicle Number Plate</string>
+    <string name="submit">SUBMIT</string>
+    <string name="next_maintenance">Input next maintenance</string>
+    <string name="last_maintenance">Input last maintenance</string>
+    <string name="amount">Total amount</string>
+    <string name="description">Description</string>
+    <string name="date">Input date</string>
+    <string name="Fueltype">Input Fuel Type</string>
+    <string name="ReceiptNumber">Receipt Number</string>
 </resources>

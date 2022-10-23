@@ -55,43 +55,28 @@ public class Login extends AppCompatActivity {
                 .build();
         gsc = GoogleSignIn.getClient(this, gso);
 
-        LoginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final String driver = driver_ID.getText().toString();
-                final String email = Email_id.getText().toString();
-                final String passwrd = Password.getText().toString();
+        LoginButton.setOnClickListener(v -> {
+            final String driver = driver_ID.getText().toString();
+            final String email = Email_id.getText().toString();
+            final String passwrd = Password.getText().toString();
 
 
-                if (TextUtils.isEmpty(email) || TextUtils.isEmpty(passwrd) || TextUtils.isEmpty(driver)) {
-                    Toast.makeText(Login.this, "please Fill in all the required details", Toast.LENGTH_LONG).show();
+            if (TextUtils.isEmpty(email) || TextUtils.isEmpty(passwrd) || TextUtils.isEmpty(driver)) {
+                Toast.makeText(Login.this, "please Fill in all the required details", Toast.LENGTH_LONG).show();
 
-                } else {
-                    startActivity(new Intent(Login.this, Homepage.class));
-                }
-
+            } else {
+                startActivity(new Intent(Login.this, Homepage.class));
             }
+
         });
-        registerNewAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Login.this, register_page.class));
-            }
+        registerNewAccount.setOnClickListener(v -> startActivity(new Intent(Login.this, register_page.class)));
+        forgotPassword.setOnClickListener(v -> {
+            Toast.makeText(Login.this, "You can now reset your password", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(Login.this, forgotPassword.class));
         });
-        forgotPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(Login.this, "You can now reset your password", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(Login.this, forgotPassword.class));
-            }
-        });
-        google.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent i = gsc.getSignInIntent();
-                startActivityForResult(i, 1234);
-            }
+        google.setOnClickListener(view -> {
+            Intent i = gsc.getSignInIntent();
+            startActivityForResult(i, 1234);
         });
     }
 
@@ -105,18 +90,15 @@ public class Login extends AppCompatActivity {
 
                 AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
                 FirebaseAuth.getInstance().signInWithCredential(credential)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    Intent intent = new Intent(getApplicationContext(), Homepage.class);
-                                    startActivity(intent);
+                        .addOnCompleteListener(task1 -> {
+                            if (task1.isSuccessful()) {
+                                Intent intent = new Intent(getApplicationContext(), Homepage.class);
+                                startActivity(intent);
 
-                                } else {
-                                    Toast.makeText(Login.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                }
-
+                            } else {
+                                Toast.makeText(Login.this, task1.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
+
                         });
 
             } catch (ApiException e) {

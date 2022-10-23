@@ -1,9 +1,6 @@
 package com.example.vehiclemanagementsystem;
 
 
-import static android.content.ContentValues.TAG;
-
-
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -63,7 +60,7 @@ public class register_page extends AppCompatActivity {
                                                       Toast.makeText(register_page.this, "password does not match", Toast.LENGTH_SHORT).show();
                                                   } else if (emailTxt.matches(emailPattern)) {
                                                       Toast.makeText(getApplicationContext(), "valid email address", Toast.LENGTH_SHORT).show();
-                                                  } else {
+                                                  } else  {
                                                       Toast.makeText(getApplicationContext(), "Invalid email address", Toast.LENGTH_SHORT).show();
                                                   }
 
@@ -75,12 +72,7 @@ public class register_page extends AppCompatActivity {
 
 
 
-        login_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+        login_btn.setOnClickListener(v -> finish());
 
             }
 }

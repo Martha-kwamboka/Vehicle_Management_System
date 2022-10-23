@@ -5,9 +5,12 @@
       <map>
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1275" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/drawable/background.xml" value="0.1" />
+        <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/drawable/background_material_design.xml" value="0.12" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/drawable/button_bg.xml" value="0.145" />
+        <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/drawable/cut_card_background.xml" value="0.113" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/drawable/edit_text_bg.xml" value="0.145" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/drawable/google.xml" value="0.109" />
+        <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/drawable/ic_baseline_contact_mail_24.xml" value="0.113" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.145" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/drawable/ic_baseline_perm_identity_24.xml" value="0.109" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.137" />
@@ -15,16 +18,22 @@
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/drawable/ic_baseline_phone_24.xml" value="0.1" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/drawable/ic_baseline_security_24.xml" value="0.145" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/drawable/ic_launcher_background.xml" value="0.145" />
+        <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/drawable/main_material_design.xml" value="0.14" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/drawable/nrblogo.xml" value="0.1415" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/layout/activity_forgot_password.xml" value="0.18659420289855072" />
-        <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/layout/activity_homepage.xml" value="0.20350877192982456" />
+        <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/layout/activity_fuel.xml" value="0.23641304347826086" />
+        <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/layout/activity_homepage.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/layout/activity_location.xml" value="0.23641304347826086" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/layout/activity_login.xml" value="0.11879432624113476" />
+        <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/layout/activity_logout.xml" value="0.23641304347826086" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/layout/activity_maintenance.xml" value="0.25" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/layout/activity_register.xml" value="0.25" />
-        <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/layout/activity_register_page.xml" value="0.4" />
+        <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/layout/activity_register_page.xml" value="0.15151515151515152" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/layout/fragment_contact.xml" value="0.24427083333333333" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/layout/fragment_home.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/layout/fragment_login.xml" value="0.2" />
+        <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/layout/fragment_maps.xml" value="0.11879432624113476" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/layout/fragment_profile.xml" value="0.24427083333333333" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/layout/fragment_register.xml" value="0.264" />
         <entry key="..\:/Users/Admin/allmyprojects/VehicleManagementSystem/app/src/main/res/menu/bottom_navmenu.xml" value="0.25833333333333336" />
