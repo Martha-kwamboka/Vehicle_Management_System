@@ -7,23 +7,38 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.View;
+import android.util.Log;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Maintenance extends AppCompatActivity {
-
+    private static final String TAG = "";
             EditText number_plate;
             EditText nextmaintenance;
             EditText lastmaintenance;
             EditText description;
             EditText amount;
             Button submitbtn;
+            String UserID;
             DatePickerDialog.OnDateSetListener setListener;
+            DatePickerDialog.OnDateSetListener setListen;
+    FirebaseDatabase firebaseDatabase;
+    private FirebaseFirestore fstore;
+    private FirebaseAuth fAuth;
+
+    // creating a variable for our Database
+    // Reference for Firebase.
+    DatabaseReference databaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +49,13 @@ public class Maintenance extends AppCompatActivity {
         description = findViewById(R.id.description);
         amount = findViewById(R.id.amount);
         submitbtn = findViewById(R.id.submitbtn);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        fstore = FirebaseFirestore.getInstance();
+        fAuth = FirebaseAuth.getInstance();
+
+
+        // below line is used to get reference for our database.
+        databaseReference = firebaseDatabase.getReference("MaintenanceInfo");
 
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
@@ -42,11 +64,11 @@ public class Maintenance extends AppCompatActivity {
 
         nextmaintenance.setOnClickListener(v -> {
             DatePickerDialog datePickerDialog = new DatePickerDialog( Maintenance.this, android.R.style.Theme_Holo_Light_Dialog_MinWidth,
-                    setListener,year,month,day);
+                    setListen,year,month,day);
             datePickerDialog.getWindow().setBackgroundDrawable((new ColorDrawable(Color.TRANSPARENT)));
             datePickerDialog.show();
         });
-        setListener = (view, year12, month12, dayOfMonth) -> {
+        setListen = (view, year12, month12, dayOfMonth) -> {
            month12 = month12 +1;
            month12 = month12 -1;
            String date = dayOfMonth+"/"+ month12 +"/"+ year12;
@@ -75,12 +97,26 @@ public class Maintenance extends AppCompatActivity {
             if (number_plateTxt.isEmpty()|| lastmaintenanceTxt.isEmpty()|| nextmaintenanceTxt.isEmpty()||amountTxt.isEmpty()|| descriptionTxt.isEmpty()){
                 Toast.makeText(Maintenance.this, "fill in all the spaces", Toast.LENGTH_SHORT).show();
             }
-            else{
+            Map<String, Object> note = new HashMap<>();
+            note.put("number Plate",number_plateTxt);
+            note.put("Total Maintenance amount",amountTxt);
+            note.put("last Maintenance",lastmaintenanceTxt);
+            note.put("Next Maintenance", nextmaintenanceTxt);
+            note.put("Description", descriptionTxt);
 
-                Toast.makeText(Maintenance.this, "Saved", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Maintenance.this, Homepage.class));
 
-            }
+
+            //send to firebase
+            fstore.collection("Maintenance").document().set(note).addOnSuccessListener(aVoid -> {
+                Log.d(TAG, "onSuccess:Data saved for " + UserID);
+                Intent intent = new Intent(Maintenance.this, Homepage.class);
+                startActivity(intent);
+                Toast.makeText(Maintenance.this, "Data Saved" ,
+                        Toast.LENGTH_SHORT).show();
+
+            });
+
+
 
         });
     }

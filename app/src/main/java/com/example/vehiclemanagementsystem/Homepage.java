@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -29,20 +30,20 @@ CardView cardFuel;
     cardLogout=findViewById(R.id.cardLogout);
 
     cardFuel.setOnClickListener(v -> {
-        showToast("Fuel is clicked");
+       // showToast("Fuel is clicked");
         startActivity(new Intent(Homepage.this, Fuel.class));
 
     });
 
 cardMaintenance.setOnClickListener(v -> {
-    showToast("Maintenance is clicked");
+
     startActivity(new Intent(Homepage.this, Maintenance.class));
 });
 
 
 cardLocation.setOnClickListener(v -> {
-    showToast("Location is clicked");
-    startActivity(new Intent(Homepage.this, Location.class));
+
+    startActivity(new Intent(Homepage.this, LocationActivity.class));
 });
 
 

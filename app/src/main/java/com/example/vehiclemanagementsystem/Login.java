@@ -9,9 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
-import android.view.View;
-import android.view.WindowManager;
+
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -35,6 +33,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 public class Login extends AppCompatActivity {
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
+    FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +47,10 @@ public class Login extends AppCompatActivity {
         final Button LoginButton = findViewById(R.id.LoginButton);
         final TextView registerNewAccount = findViewById(R.id.registernowbtn);
         final ImageView google = findViewById(R.id.google);
+        fAuth=FirebaseAuth.getInstance();
+
+
+
 
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -59,7 +62,19 @@ public class Login extends AppCompatActivity {
             final String driver = driver_ID.getText().toString();
             final String email = Email_id.getText().toString();
             final String passwrd = Password.getText().toString();
+            String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
+            fAuth.signInWithEmailAndPassword(email,passwrd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful()){
+                        Toast.makeText(Login.this, "Logged in Successfully.", Toast.LENGTH_SHORT) .show();
+                        Intent intent = new Intent(Login.this, MainActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                    }
+                }
+            });
 
             if (TextUtils.isEmpty(email) || TextUtils.isEmpty(passwrd) || TextUtils.isEmpty(driver)) {
                 Toast.makeText(Login.this, "please Fill in all the required details", Toast.LENGTH_LONG).show();
@@ -78,6 +93,7 @@ public class Login extends AppCompatActivity {
             Intent i = gsc.getSignInIntent();
             startActivityForResult(i, 1234);
         });
+
     }
 
     @Override
@@ -109,14 +125,4 @@ public class Login extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            Intent intent = new Intent(this, Homepage.class);
-            startActivity(intent);
-        }
-    }
 }
-

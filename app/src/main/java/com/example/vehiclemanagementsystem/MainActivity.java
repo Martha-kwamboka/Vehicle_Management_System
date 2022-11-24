@@ -23,12 +23,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        //Button   RegisterButton = (Button) findViewById(R.id. RegisterButton);
-       // RegisterButton.setOnClickListener(new View.OnClickListener() {
-          //  public void onClick(View v) {
-
-            //}
-     //   });
+        Button   RegisterButton = (Button) findViewById(R.id. RegisterButton);
+        RegisterButton.setOnClickListener(new View.OnClickListener() {
+           public void onClick(View v) {
+        Intent intent= new Intent(MainActivity.this, register_page.class);
+               startActivity(intent);
+            }
+       });
 
         Button   LoginButton = (Button) findViewById(R.id. LoginButton);
         LoginButton.setOnClickListener(v -> {
@@ -40,8 +41,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void onRegister(View view) {
-        Intent intent = new Intent(MainActivity.this, register_page.class);
-        startActivity(intent);
-    }
+
 }
