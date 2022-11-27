@@ -99,7 +99,7 @@ class LocationActivity extends AppCompatActivity
 
         // [START_EXCLUDE silent]
         // Construct a PlacesClient
-        Places.initialize(getApplicationContext(), "AIzaSyCFcpyLfTUD2DExaSUasy_D22A8wU6m6iY");
+        Places.initialize(getApplicationContext(), "GOOGLE-API KEY");
         placesClient = Places.createClient(this);
 
         // Construct a FusedLocationProviderClient.
